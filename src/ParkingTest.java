@@ -21,8 +21,8 @@ public class ParkingTest {
 	//validate that 5 hours results in a charge of $3.00, with correct running total
 	public void validIntegerTest() {
 		ParkingCharge test = new ParkingCharge(0);
-        int charge = (int) ParkingCharge.calculateCharges(5);
-        test.setRunTotal(charge);
+	        int charge = (int) ParkingCharge.calculateCharges(5);
+        	test.setRunTotal(charge);
 		
 		assertTrue(charge == 3.00 && test.getRunTotal() == 3.00);
 	}
@@ -32,8 +32,8 @@ public class ParkingTest {
 	//validate that 10.2 hours results in a charge of $6.00, with correct running total
 	public void validDoubleTest() {
 		ParkingCharge test = new ParkingCharge(0.0);
-        double charge = ParkingCharge.calculateCharges(10.2);
-        test.setRunTotal(charge);
+       	 	double charge = ParkingCharge.calculateCharges(10.2);
+        	test.setRunTotal(charge);
 		
 		assertTrue(charge == 6.00 && test.getRunTotal() == 6.00);
 	}
@@ -43,8 +43,8 @@ public class ParkingTest {
 	//validate that 2.2 hours is charged the MINCHARGE of $2.00 because it is under the MINHOURS (3.0)
 	public void underMinHoursTest() {
 		ParkingCharge test = new ParkingCharge(0);
-        double charge = ParkingCharge.calculateCharges(2.2);
-        test.setRunTotal(charge);
+        	double charge = ParkingCharge.calculateCharges(2.2);
+        	test.setRunTotal(charge);
 		
 		assertTrue(charge == 2.00 && test.getRunTotal() == 2.00);
 	}
@@ -55,8 +55,8 @@ public class ParkingTest {
 	//validate that 24.5 hours is charged the MAXCHARGE of $10.00 because it is over the MAXHOURS (24)
 	public void overMaxHoursTest() {
 		ParkingCharge test = new ParkingCharge(0);
-        double charge = ParkingCharge.calculateCharges(24.5);
-        test.setRunTotal(charge);
+        	double charge = ParkingCharge.calculateCharges(24.5);
+        	test.setRunTotal(charge);
 		
 		assertTrue(charge == 10.00 && test.getRunTotal() == 10.00);
 	}
@@ -72,14 +72,14 @@ public class ParkingTest {
 		ParkingChargeDriver test = new ParkingChargeDriver();
 		test.main(null);			//start main method
 
-        System.setIn(original);	//reset System.in to original
+        	System.setIn(original);	//reset System.in to original
 	}
 	
 	@Test (expected = NoSuchElementException.class)
 	//Test ID: 1
 	//validate that an exception is thrown when the input value is too large (over max double value)
 	public void greaterThanMaxDoubleTest() {
-		InputStream sysInBackup = System.in; // backup System.in to restore it later
+		InputStream original = System.in; // backup System.in to restore it later
 		double d = Double.MAX_VALUE + 10;
 		ByteArrayInputStream in = new ByteArrayInputStream(Double.toString(d).getBytes());
 		System.setIn(in);
@@ -87,7 +87,7 @@ public class ParkingTest {
 		ParkingChargeDriver test = new ParkingChargeDriver();
 		test.main(null);
 
-        System.setIn(sysInBackup);
+        	System.setIn(original);
 	}
-	
+
 }

@@ -12,17 +12,17 @@
 public class ParkingCharge
 {
 
-    // set final variables
+    	// set final variables
 	private static final double MINCHAEGE = 2.0;
-    private static final double MAXCHARGE = 10.0;
-    private static final double INCCHARGE = 0.50;
+    	private static final double MAXCHARGE = 10.0;
+    	private static final double INCCHARGE = 0.50;
 
-    // Set min and max hours
-    private static final double MINHOURS = 3.0;
-    private static final double MAXHOURS = 24;
+    	// Set min and max hours
+    	private static final double MINHOURS = 3.0;
+    	private static final double MAXHOURS = 24;
 
-    // Set variable to keeping track of daily charges
-    private double runTotal;
+    	// Set variable to keeping track of daily charges
+    	private double runTotal;
 
     // constructor
     public ParkingCharge(double runTotal)

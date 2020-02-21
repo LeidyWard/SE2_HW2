@@ -28,21 +28,21 @@ public class ParkingChargeDriver
 		// Start while loop for customer hour entry.
 		while (hours != -1)
 		{
-            System.out.printf("Enter Hours (-1 to quit)..: ");
-            hours = input.nextDouble();
+            		System.out.printf("Enter Hours (-1 to quit)..: ");
+            		hours = input.nextDouble();
 
-            // Only allow entry if hours are greater than zero.
+            		// Only allow entry if hours are greater than zero.
 			if(hours > 0)
 			{
-                charges = ParkingCharge.calculateCharges(hours);
-                costs.setRunTotal(charges);
-                System.out.printf("Customer charge is........: " +
-                        "$%.2f ", charges);
-                System.out.print("\n");
-                System.out.printf("Running Daily Total.......: " +
-                        "$%.2f%n", costs.getRunTotal());
-            }
-            System.out.print("\n");
+                		charges = ParkingCharge.calculateCharges(hours);
+                		costs.setRunTotal(charges);
+                		System.out.printf("Customer charge is........: " +
+                        		"$%.2f ", charges);
+                		System.out.print("\n");
+                		System.out.printf("Running Daily Total.......: " +
+                        		"$%.2f%n", costs.getRunTotal());
+            		}		
+            		System.out.print("\n");
 		} // END - Customer Hours Entry.
 
 		// Close the input scanner ( prevent resource leaks )
